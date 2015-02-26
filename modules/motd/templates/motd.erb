@@ -1,0 +1,10 @@
+*******************************************************************************
+ Hostname:     <%= hostname %>.<%= domain %> ( <%= ipaddress %> )
+ OS:           <%= operatingsystem %> <%= operatingsystemrelease %> <% if has_variable?("architecture") then %><%= architecture %><% end %>
+
+ Puppetmaster: <%= puppetmaster %>
+ Environment:  <%= environment %>
+ Puppet:       <%= puppetversion %>
+ Facter:       <%= facterversion %>
+*******************************************************************************
+

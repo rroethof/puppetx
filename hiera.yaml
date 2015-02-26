@@ -1,0 +1,23 @@
+---
+:backend:
+  - yaml
+
+:hierarchy:
+  - nodes/%{fqdn}
+  - nodes/%{fqdn}-passwords
+  - nodes/defaults
+  - datacenter/%{datacenter}
+  - datacenter/%{datacenter}-passwords
+  - datacenter/defaults
+  - ostype/%{osfamily}
+  - ostype/%{osfamily}-passwords
+  - ostype/%{operatingsystem}
+  - ostype/%{operatingsystem}-passwords
+  - ostype/defaults
+  - defaults-passwords
+  - defaults
+
+:yaml:
+# datadir is empty here, so hiera uses its defaults
+# When specifying a datadir, make sure the path of the datadir exists
+  :datadir: /etc/puppet/hieradata

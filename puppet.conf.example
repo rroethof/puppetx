@@ -1,0 +1,35 @@
+[main]
+  server        = $hostname
+
+  confdir       = /etc/puppet
+  logdir        = /var/log/puppet
+  vardir        = /var/lib/puppet
+  ssldir        = /var/lib/puppet/ssl
+  rundir        = /var/run/puppet
+  factpath      = $vardir/lib/facter
+  pluginsync    = true
+  reportdir     = $vardir/reports
+
+  dns_alt_names = $hostname
+
+[master]
+  reports                   = log
+  pluginsync                = true
+  ssl_client_header         = SSL_CLIENT_S_DN 
+  ssl_client_verify_header  = SSL_CLIENT_VERIFY
+  certname                  = $hostname
+  ca_server                 = $hostname
+  certdnsnames              = $hostname:$hostname2
+
+  storeconfigs              = true
+  dbadapter                 = mysql
+  dbuser                    = puppet
+  dbpassword                = xxx
+  dbserver                  = localhost
+  dbsocket                  = /var/run/mysqld/mysqld.sock
+
+[agent]
+  report      = true
+  ignorecache = true
+  show_diff   = true
+  pluginsync  = true

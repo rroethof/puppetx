@@ -1,0 +1,2 @@
+node "mini.roethof.lan" {
+}

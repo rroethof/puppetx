@@ -1,0 +1,6 @@
+---
+puppetmaster: mini.roethof.lan
+
+classes:
+  - motd
+
